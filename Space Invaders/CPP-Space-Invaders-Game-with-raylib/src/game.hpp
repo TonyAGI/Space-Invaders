@@ -1,4 +1,6 @@
 #pragma once
+#include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include "spaceship.hpp"
 #include "obstacle.hpp"
 #include "alien.hpp"
@@ -8,14 +10,14 @@ class Game {
     public:
         Game();
         ~Game();
-        void Draw();
+        void Draw(sf::RenderWindow& window);
         void Update();
         void HandleInput();
         bool run;
         int lives;
         int score;
         int highscore;
-        Music music;
+        sf::Music music;
     private:
         void DeleteInactiveLasers();
         std::vector<Obstacle> CreateObstacles();
@@ -35,10 +37,11 @@ class Game {
         std::vector<Alien> aliens;
         int aliensDirection;
         std::vector<Laser> alienLasers;
-        constexpr static float alienLaserShootInterval = 0.35;
+        constexpr static float alienLaserShootInterval = 0.35f;
         float timeLastAlienFired;
         MysteryShip mysteryship;
         float mysteryShipSpawnInterval;
         float timeLastSpawn;
-        Sound explosionSound;
+        sf::Sound explosionSound;
+        sf::SoundBuffer explosionBuffer;
 };
