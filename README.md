@@ -1,5 +1,7 @@
 # Space Invaders Game
 
+![Space Invaders Project](Space%20Invaders%20Project%20Start.png)
+
 A classic Space Invaders game implementation with multiple versions and build options.
 
 ## 🎮 Game Versions
